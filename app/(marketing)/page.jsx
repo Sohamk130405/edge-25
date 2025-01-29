@@ -1,4 +1,5 @@
 import AnimationContainer from "@/components/animation-container";
+import EventCountdown from "@/components/EventCountdown";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import PricingCards from "@/components/pricing-cards";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
@@ -35,10 +36,11 @@ const HomePage = async () => {
               </span>
               <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
               <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
-              <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
+              {/* <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
                 ✨ Fostering Changes And Impacting Lives
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-              </span>
+              </span> */}
+              <EventCountdown/>
             </button>
             <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
               Explore, Develop, Grow, Excel with{" "}
@@ -148,11 +150,11 @@ const HomePage = async () => {
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
             <MagicBadge title="The Process" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              Effortless link management in 3 steps
+              Registration Steps
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Follow these simple steps to optimize, organize, and share your
-              links with ease.
+              Follow these simple steps to register, participate, and get your
+              ticket with ease.
             </p>
           </div>
         </AnimationContainer>

@@ -69,12 +69,6 @@ const MobileNavbar = () => {
                   >
                     Sign In
                   </Link>
-                  <Link
-                    href="/auth/sign-up"
-                    className={buttonVariants({ className: "w-full" })}
-                  >
-                    Sign Up
-                  </Link>
                 </>
               )}
             </div>

@@ -34,21 +34,23 @@ export const COMPANIES = [
 
 export const PROCESS = [
   {
-    title: "Organize Your Links",
-    description:
-      "Efficiently categorize and tag your links for quick access and easy management.",
+    title: "Click Register",
+    description: "Enter your credentials and Sign In on vierp.",
     icon: FolderOpenIcon,
   },
   {
-    title: "Shorten and Customize",
-    description:
-      "Create concise, branded links that are easy to share and track.",
+    title: "Go to payments",
+    description: "Check for event fees section and pay.",
     icon: WandSparklesIcon,
   },
   {
-    title: "Analyze and Optimize",
-    description:
-      "Gain insights into link performance and optimize for better engagement.",
+    title: "Check Email",
+    description: "Email containing credentials will send soon",
+    icon: BarChart3Icon,
+  },
+  {
+    title: "Get Ticket",
+    description: "SignIn and collect ticket From website",
     icon: BarChart3Icon,
   },
 ];

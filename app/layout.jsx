@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scrollbar">
       <body
+        cz-shortcut-listen="true"
         className={cn(
           "min-h-screen bg-background text-foreground antialiased !font-default overflow-x-hidden",
           aeonik.variable,

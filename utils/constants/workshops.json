@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Off-campus Placement Roadmap Workshop",
+        "image": "/assets/blog1.jpg",
+        "author_image": "https://example.com/images/author1.jpg",
+        "description": "Navigate the intricacies of off-campus placements with expert insights, charting a strategic path for success. Tailor your approach for placement."
+    },
+    {
+        "title": "Alchemy of Modern AI Tools Workshop",
+        "image": "/assets/blog2.jpg",
+        "author_image": "https://example.com/images/author2.jpg",
+        "description": "Explore the transformative realm of artificial intelligence, delving into cutting-edge tools and understanding their applications in the modern world."
+    },
+    {
+        "title": "Personal Branding Workshop",
+        "image": "/assets/blog3.jpg",
+        "author_image": "https://example.com/images/author3.jpg",
+        "description": "Craft a powerful and authentic personal brand that sets you apart in the professional landscape, leveraging effective self-presentation strategies."
+    },
+    {
+        "title": "The Five Fold Triumph - A Five-Stage Competition",
+        "image": "/assets/blog4.jpg",
+        "author_image": "https://example.com/images/author4.jpg",
+        "description": "Engage in Zenga challenges, captivating debates, promising a thrilling journey testing various skills and showcasing talents."
+    }
+]

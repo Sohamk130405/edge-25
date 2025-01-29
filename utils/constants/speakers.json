@@ -1,0 +1,22 @@
+[
+    {
+        "name": "John Doe",
+        "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+        "description": "Join industry leaders as they unveil groundbreaking technological advancements and discuss the future landscape of innovation."
+    },
+    {
+        "name": "Adam Eve",
+        "image": "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+        "description": "Gain insights from successful entrepreneurs on navigating challenges, scaling businesses, and fostering an entrepreneurial spirit."
+    },
+    {
+        "name": "George Christ",
+        "image": "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+        "description": "Unlock the secrets of impactful communication with expert tips on storytelling, persuasion, and stage presence."
+    },
+    {
+        "name": "May Watson",
+        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGVyc29ufGVufDB8fDB8fHww",
+        "description": "Dive into AI's rapid evolution, its ethical dilemmas, and how businesses and societies can navigate the AI-driven future responsibly."
+    }
+]

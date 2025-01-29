@@ -126,9 +126,10 @@ export const CARDS = [
     background: (
       <Calendar
         mode="range"
+        defaultMonth={new Date(2025, 2)}
         selected={{
-          from: new Date(2025, 2, 4), 
-          to: new Date(2025, 2, 7), 
+          from: new Date(2025, 2, 4),
+          to: new Date(2025, 2, 7),
         }}
         className="absolute right-0 top-10 origin-top rounded-md border border-border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
       />
