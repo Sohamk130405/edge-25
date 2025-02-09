@@ -7,6 +7,7 @@ import {
   CalendarIcon,
   UsersIcon,
   ListIcon,
+  User,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -25,7 +26,7 @@ export const CARDS = [
     Icon: ListIcon,
     name: "Register Now",
     description: "Sign up for EDGE and its sub-events effortlessly.",
-    href: "/register",
+    href: "https://learner.vierp.in",
     cta: "Register",
     className: "col-span-3 lg:col-span-1",
     background: (
@@ -57,39 +58,57 @@ export const CARDS = [
     className: "col-span-3 lg:col-span-2",
     background: (
       <div className="absolute right-0 top-10 origin-top rounded-md border border-border transition-all duration-300 ease-out p-4 bg-background grid grid-cols-2 gap-4 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105">
-        <div className="flex flex-col items-center justify-center p-4 rounded-lg bg-secondary/20 text-primary">
-          <img
-            src="/icons/workshop-icon.svg"
-            alt="Workshop Icon"
-            className="w-8 h-8 mb-2"
-          />
-          <p className="text-center text-sm font-medium">Workshops</p>
+        <div className="flex flex-col items-center justify-center  rounded-lg bg-secondary/20 text-primary">
+          <div
+            className="w-full h-28 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29ya3Nob3B8ZW58MHx8MHx8fDI%3D')",
+            }}
+          >
+            <p className="text-center w-full text-sm font-medium text-white bg-black bg-opacity-50 p-2">
+              Workshops
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-center p-4 rounded-lg bg-secondary/20 text-primary">
-          <img
-            src="/speakers.png"
-            alt="Speaker Session Icon"
-            className="w-8 h-8 mb-2"
-          />
-          <p className="text-center text-sm font-medium">Speaker Sessions</p>
+        <div className="flex flex-col items-center justify-center  rounded-lg bg-secondary/20 text-primary">
+          <div
+            className="w-full h-28 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+            <p className="text-center w-full text-sm font-medium text-white bg-black bg-opacity-50 p-2">
+              Speaker Sessions
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-center p-4 rounded-lg bg-secondary/20 text-primary">
-          <img
-            src="/icons/mock-group-discussion-icon.svg"
-            alt="Mock Group Discussion Icon"
-            className="w-8 h-8 mb-2"
-          />
-          <p className="text-center text-sm font-medium">
-            Mock Group Discussions
-          </p>
+        <div className="flex flex-col items-center justify-center  rounded-lg bg-secondary/20 text-primary">
+          <div
+            className="w-full h-28 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1184&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+            <p className="text-center w-full text-sm font-medium text-white bg-black bg-opacity-50 p-2">
+              Mock Group Discussions
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-center p-4 rounded-lg bg-secondary/20 text-primary">
-          <img
-            src="/icons/personal-interview-icon.svg"
-            alt="Personal Interview Icon"
-            className="w-8 h-8 mb-2"
-          />
-          <p className="text-center text-sm font-medium">Personal Interviews</p>
+        <div className="flex flex-col items-center justify-center  rounded-lg bg-secondary/20 text-primary">
+          <div
+            className="w-full h-28 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1622674777904-386b3ef30c4a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+            <p className="text-center w-full text-sm font-medium text-white bg-black bg-opacity-50 p-2">
+              Personal Interviews
+            </p>
+          </div>
         </div>
       </div>
     ),
@@ -105,13 +124,20 @@ export const CARDS = [
     background: (
       <div className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
         {/* Replace with mentor profile cards */}
-        <div className="flex flex-col items-start p-4">
-          <p className="text-lg font-semibold text-neutral-300">John Doe</p>
-          <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
+        <div className="flex items-center">
+          <User className="size-10" />
+          <div className="flex flex-col items-start p-4">
+            <p className="text-lg font-semibold text-neutral-300">John Doe</p>
+            <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
+          </div>
         </div>
-        <div className="flex flex-col items-start p-4">
-          <p className="text-lg font-semibold text-neutral-300">Jane Smith</p>
-          <p className="text-sm text-neutral-400">Data Scientist at XYZ</p>
+
+        <div className="flex items-center">
+          <User className="size-10" />
+          <div className="flex flex-col items-start p-4">
+            <p className="text-lg font-semibold text-neutral-300">Jane Smith</p>
+            <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
+          </div>
         </div>
       </div>
     ),
@@ -129,7 +155,7 @@ export const CARDS = [
         defaultMonth={new Date(2025, 2)}
         selected={{
           from: new Date(2025, 2, 4),
-          to: new Date(2025, 2, 7),
+          to: new Date(2025, 2, 6),
         }}
         className="absolute right-0 top-10 origin-top rounded-md border border-border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
       />
@@ -172,7 +198,9 @@ const BentoCard = ({
     <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
       <Icon className="h-12 w-12 origin-left text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
       <h3 className="text-xl font-semibold text-neutral-300">{name}</h3>
-      <p className="max-w-lg text-neutral-400">{description}</p>
+      <p className="max-w-lg text-neutral-400 truncate sm:whitespace-normal sm:truncate-none">
+        {description}
+      </p>
     </div>
 
     <div

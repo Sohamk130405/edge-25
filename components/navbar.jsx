@@ -69,12 +69,12 @@ const Navbar = () => {
                           <ul
                             className={cn(
                               "grid gap-1 p-4 md:w-[400px] lg:w-[500px] rounded-xl",
-                              link.title === "Features"
+                              link.title === "Event"
                                 ? "lg:grid-cols-[.75fr_1fr]"
                                 : "lg:grid-cols-2"
                             )}
                           >
-                            {link.title === "Features" && (
+                            {link.title === "Event" && (
                               <li className="row-span-4 pr-2 relative rounded-lg overflow-hidden">
                                 <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
                                 <NavigationMenuLink
@@ -86,10 +86,10 @@ const Navbar = () => {
                                     className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
                                   >
                                     <h6 className="mb-2 mt-4 text-lg font-medium">
-                                      All Features
+                                      Event Details
                                     </h6>
                                     <p className="text-sm leading-tight text-muted-foreground">
-                                      Manage links, track performance, and more.
+                                      Explore, Develop, Grow, ExceL.
                                     </p>
                                   </Link>
                                 </NavigationMenuLink>
@@ -109,7 +109,12 @@ const Navbar = () => {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <Link href={link.href} legacyBehavior passHref>
+                      <Link
+                        href={link.href}
+                        scroll={false}
+                        legacyBehavior
+                        passHref
+                      >
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
                         >

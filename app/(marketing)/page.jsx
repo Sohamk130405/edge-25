@@ -1,5 +1,6 @@
 import AnimationContainer from "@/components/animation-container";
 import EventCountdown from "@/components/EventCountdown";
+import Lightup from "@/components/lightup";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import PricingCards from "@/components/pricing-cards";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
@@ -36,10 +37,6 @@ const HomePage = async () => {
               </span>
               <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
               <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
-              {/* <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                ✨ Fostering Changes And Impacting Lives
-                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-              </span> */}
               <EventCountdown />
             </button>
             <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
@@ -136,7 +133,7 @@ const HomePage = async () => {
           </div>
         </AnimationContainer>
         <AnimationContainer delay={0.2}>
-          <BentoGrid className="py-8">
+          <BentoGrid className="py-4">
             {CARDS.map((feature, idx) => (
               <BentoCard key={idx} {...feature} />
             ))}
@@ -213,128 +210,13 @@ const HomePage = async () => {
         </AnimationContainer>
       </MaxWidthWrapper>
 
-      {/* Reviews Section */}
-      <MaxWidthWrapper className="py-10">
-        <AnimationContainer delay={0.1}>
-          <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-            <MagicBadge title="Testimonials" />
-            <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              What our attendees are saying
-            </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Here&apos;s what some of our attendees have to say about EDGE
-            </p>
-          </div>
-        </AnimationContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start gap-4 md:gap-8 py-10">
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(0, 3).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(3, 6).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(6, 9).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
-        </div>
-      </MaxWidthWrapper>
-
       {/* CTA Section */}
-      <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
-        <AnimationContainer delay={0.1}>
-          <LampContainer>
-            <div className="flex flex-col items-center justify-center relative w-full text-center">
-              <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
-                Empowering Students for Professional Success
-              </h2>
-              <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                E.D.G.E empowers students with real-world insights through mock
-                Group Discussions, Personal Interviews, and expert mentorship,
-                enhancing communication, teamwork, and problem-solving skills
-                for professional success.
-              </p>
-              <div className="mt-6">
-                <Button>
-                  Register Now
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            </div>
-          </LampContainer>
-        </AnimationContainer>
-      </MaxWidthWrapper>
+      <Lightup
+        title={"Empowering Students for Professional Success"}
+        desc={
+          "E.D.G.E empowers students with real-world insights through mockGroup Discussions, Personal Interviews, and expert mentorship,enhancing communication, teamwork, and problem-solving skills forprofessional success."
+        }
+      />
     </div>
   );
 };
