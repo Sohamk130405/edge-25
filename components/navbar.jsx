@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,12 +19,12 @@ import MobileNavbar from "./mobile-navbar";
 import AnimationContainer from "./animation-container";
 import { cn } from "@/utils/functions/cn";
 import { NAV_LINKS } from "@/utils/constants/nav-links";
-import { useSession } from "next-auth/react";
+import { useCurrentUser } from "@/hooks/user/useCurrentUser";
+import { useAuthActions } from "@convex-dev/auth/react";
 const Navbar = () => {
-  const { data: session } = useSession();
-
   const [scroll, setScroll] = useState(false);
-
+  const { data: user } = useCurrentUser();
+  const { signOut } = useAuthActions();
   const handleScroll = () => {
     if (window.scrollY > 8) {
       setScroll(true);
@@ -124,21 +124,24 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center">
-            {session && session.user ? (
-              <div className="flex items-center">
-                <Link
-                  href="/dashboard"
-                  className={buttonVariants({ size: "sm" })}
-                >
-                  Dashboard
-                </Link>
+            {user ? (
+              <div className="flex items-center gap-2">
+                <>
+                  <Button>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </Button>
+                  <Button
+                    onClick={signOut}
+                    className={"w-full"}
+                    variant="outline"
+                  >
+                    Sign Out
+                  </Button>
+                </>
               </div>
             ) : (
               <div className="flex items-center gap-x-4">
-                <Link
-                  href="/auth/sign-up"
-                  className={buttonVariants({ size: "sm" })}
-                >
+                <Link href="/auth/" className={buttonVariants({ size: "sm" })}>
                   Sign In
                   <ZapIcon className="size-3.5 ml-1.5 text-orange-500 fill-orange-500" />
                 </Link>

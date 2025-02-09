@@ -18,13 +18,13 @@ import { NAV_LINKS } from "@/utils/constants/nav-links";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useSession, signOut } from "next-auth/react";
+import { useCurrentUser } from "@/hooks/user/useCurrentUser";
+import { useAuthActions } from "@convex-dev/auth/react";
 
 const MobileNavbar = () => {
-  const { data: session } = useSession();
-
   const [isOpen, setIsOpen] = useState(false);
-
+  const { data: user } = useCurrentUser();
+  const { signOut } = useAuthActions();
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -48,20 +48,25 @@ const MobileNavbar = () => {
           </SheetClose>
           <div className="flex flex-col items-start w-full py-2 mt-10">
             <div className="flex items-center justify-evenly w-full space-x-2">
-              {session && session.user ? (
-                <Link
-                  href="/dashboard"
-                  className={buttonVariants({
-                    variant: "outline",
-                    className: "w-full",
-                  })}
-                >
-                  Dashboard
-                </Link>
+              {user ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className={buttonVariants({
+                      variant: "outline",
+                      className: "w-full",
+                    })}
+                  >
+                    Dashboard
+                  </Link>
+                  <Button onClick={signOut} className={"w-full"} variant="outline">
+                    Sign Out
+                  </Button>
+                </>
               ) : (
                 <>
                   <Link
-                    href="/auth/sign-in"
+                    href="/auth/"
                     className={buttonVariants({
                       variant: "outline",
                       className: "w-full",

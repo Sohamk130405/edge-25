@@ -1,11 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
-import AuthProvider from "@/Provider/SessionProvider";
 import "./globals.css";
 import { cn } from "@/utils/functions/cn";
 import { generateMetadata } from "@/utils/functions/metadata";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-
+import { ConvexClientProvider } from "@/Provider/ConvexClientProvider";
+import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 export const aeonik = localFont({
   src: [
     {
@@ -41,37 +41,23 @@ export const metadata = generateMetadata();
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scrollbar">
-      <body
-        cz-shortcut-listen="true"
-        className={cn(
-          "min-h-screen bg-background text-foreground antialiased !font-default overflow-x-hidden",
-          aeonik.variable,
-          inter.variable
-        )}
-        fdprocessedid="vf6lo 7hajy"
-      >
-        <AuthProvider>
-          <Toaster richColors theme="dark" position="top-right" />
-          {children}
-        </AuthProvider>
-      </body>
-    </html>
+    <ConvexAuthNextjsServerProvider>
+      <html lang="en" className="scrollbar">
+        <body
+          cz-shortcut-listen="true"
+          className={cn(
+            "min-h-screen bg-background text-foreground antialiased !font-default overflow-x-hidden",
+            aeonik.variable,
+            inter.variable
+          )}
+          fdprocessedid="vf6lo 7hajy"
+        >
+          <ConvexClientProvider>
+            <Toaster richColors theme="dark" position="top-right" />
+            {children}
+          </ConvexClientProvider>
+        </body>
+      </html>
+    </ConvexAuthNextjsServerProvider>
   );
-}
-
-{
-  /* <div className="absolute top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(100%_50%_at_50%_0%,rgba(168,85,247,0.13)_0,rgba(168,85,247,0)_50%,rgba(168,85,247,0)_100%)]"></div> */
-}
-{
-  /* <AnimatedBackground
-                    numSquares={6}
-                    maxOpacity={0.2}
-                    duration={10}
-                    repeatDelay={10}
-                    className={cn(
-                        "[mask-image:radial-gradient(800px_circle_at_center,black,transparent)]",
-                        "inset-0 w-full h-[100%] inset-y-[-30%] hidden md:block",
-                    )}
-                /> */
 }
