@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useCurrentUser } from "@/hooks/user/useCurrentUser";
 import { Loader } from "lucide-react";
-import { signOut } from "@/convex/auth";
+import { useAuthActions } from "@convex-dev/auth/react";
 
 const DashboardPage = () => {
   const router = useRouter();
   const { data: user, isLoading } = useCurrentUser();
-
+  const { signOut } = useAuthActions();
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {isLoading ? (

@@ -6,19 +6,14 @@ import PricingCards from "@/components/pricing-cards";
 import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { LampContainer } from "@/components/ui/lamp";
+
+
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
-import { COMPANIES, PROCESS, REVIEWS } from "@/utils/constants/misc";
-import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
+import { COMPANIES, PROCESS } from "@/utils/constants/misc";
+import {
+  ArrowRightIcon,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -103,8 +98,8 @@ const HomePage = async () => {
                       <Image
                         src={company.logo}
                         alt={company.name}
-                        width={80}
-                        height={80}
+                        width={1080}
+                        height={1080}
                         quality={100}
                         className="w-28 h-auto"
                       />
@@ -155,7 +150,7 @@ const HomePage = async () => {
             </p>
           </div>
         </AnimationContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full py-8 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full py-8 gap-4 md:gap-8">
           {PROCESS.map((process, id) => (
             <AnimationContainer delay={0.2 * id} key={id}>
               <MagicCard className="group md:py-8">
@@ -197,16 +192,6 @@ const HomePage = async () => {
         </AnimationContainer>
         <AnimationContainer delay={0.2}>
           <PricingCards />
-        </AnimationContainer>
-        <AnimationContainer delay={0.3}>
-          <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-12 max-w-5xl mx-auto w-full">
-            <div className="flex items-center gap-2">
-              <CreditCardIcon className="w-5 h-5 text-foreground" />
-              <span className="text-muted-foreground">
-                No credit card required
-              </span>
-            </div>
-          </div>
         </AnimationContainer>
       </MaxWidthWrapper>
 

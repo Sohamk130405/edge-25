@@ -29,52 +29,11 @@ const Footer = () => {
           </div>
         </AnimationContainer>
 
-        <div className="grid-cols-2 gap-8 grid mt-16 xl:col-span-2 xl:mt-0">
-          <div className="md:grid md:grid-cols-2 md:gap-8">
-            <AnimationContainer delay={0.2}>
-              <div className="">
-                <h3 className="text-base font-medium text-white">Event</h3>
-                <ul className="mt-4 text-sm text-muted-foreground">
-                  <li className="mt-2">
-                    <Link
-                      href=""
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Features
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href=""
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Tickets
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href=""
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Testimonials
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href=""
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Integration
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </AnimationContainer>
+        <div className="grid-cols-1 gap-8 grid mt-16 xl:col-span-2 xl:mt-0">
+          <div className="grid grid-cols-3">
             <AnimationContainer delay={0.3}>
-              <div className="mt-10 md:mt-0 flex flex-col">
-                <h3 className="text-base font-medium text-white">
-                  Integrations
-                </h3>
+              <div className="md:mt-0 flex flex-col">
+                <h3 className="text-base font-medium text-white">Social</h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
@@ -103,8 +62,6 @@ const Footer = () => {
                 </ul>
               </div>
             </AnimationContainer>
-          </div>
-          <div className="md:grid md:grid-cols-2 md:gap-8">
             <AnimationContainer delay={0.4}>
               <div className="">
                 <h3 className="text-base font-medium text-white">Event</h3>
@@ -119,17 +76,25 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/workshops"
+                      href="/speakers"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Speakers
+                    </Link>
+                  </li>
+                  <li className="mt-2">
+                    <Link
+                      href="/main-events"
+                      className="hover:text-foreground transition-all duration-300"
+                    >
+                      Main-Events
                     </Link>
                   </li>
                 </ul>
               </div>
             </AnimationContainer>
             <AnimationContainer delay={0.5}>
-              <div className="mt-10 md:mt-0 flex flex-col">
+              <div className="md:mt-0 flex flex-col">
                 <h3 className="text-base font-medium text-white">
                   Abhivriddhi
                 </h3>

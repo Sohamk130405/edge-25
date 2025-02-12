@@ -1,5 +1,4 @@
 import AnimationContainer from "@/components/animation-container";
-import Testimonials from "@/components/testimonials";
 
 const AboutPage = () => {
   return (
@@ -12,7 +11,6 @@ const AboutPage = () => {
           Explore, Develop, Grow, ExceL
         </p>
       </AnimationContainer>
-      <Testimonials />
     </div>
   );
 };

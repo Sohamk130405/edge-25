@@ -79,18 +79,15 @@ const Navbar = () => {
                                 <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
                                 <NavigationMenuLink
                                   asChild
-                                  className="z-20 relative"
+                                  className="z-20 relative bg-cover bg-[url('https://images.unsplash.com/photo-1561489396-888724a1543d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
                                 >
                                   <Link
                                     href="/"
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                                    className="flex h-full w-full select-none flex-col justify-start rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
                                   >
                                     <h6 className="mb-2 mt-4 text-lg font-medium">
                                       Event Details
                                     </h6>
-                                    <p className="text-sm leading-tight text-muted-foreground">
-                                      Explore, Develop, Grow, ExceL.
-                                    </p>
                                   </Link>
                                 </NavigationMenuLink>
                               </li>

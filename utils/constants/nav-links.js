@@ -1,11 +1,4 @@
-import {
-  HelpCircleIcon,
-  LineChartIcon,
-  Link2Icon,
-  LockIcon,
-  NewspaperIcon,
-  QrCodeIcon,
-} from "lucide-react";
+import { HelpCircleIcon, UserRoundSearch, CalendarFold } from "lucide-react";
 
 export const NAV_LINKS = [
   {
@@ -16,7 +9,7 @@ export const NAV_LINKS = [
         title: "Speakers",
         tagline: "Meet our enigmatic speakers.",
         href: "/speakers",
-        icon: NewspaperIcon,
+        icon: UserRoundSearch,
       },
       {
         title: "Workshops",
@@ -28,23 +21,9 @@ export const NAV_LINKS = [
         title: "Main Events",
         tagline: "Flagship Content.",
         href: "/main-events",
-        icon: HelpCircleIcon,
-      },
-      {
-        title: "QR Attendance",
-        tagline: "Scan QR codes to mark attendance.",
-        href: "/features/qr-codes",
-        icon: QrCodeIcon,
+        icon: CalendarFold,
       },
     ],
-  },
-  {
-    title: "Pricing",
-    href: "#pricing",
-  },
-  {
-    title: "Sponsors",
-    href: "#sponsors",
   },
   {
     title: "About",

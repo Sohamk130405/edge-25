@@ -2,12 +2,7 @@
     {
         "name": "John Doe",
         "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-        "description": "Join industry leaders as they unveil groundbreaking technological advancements and discuss the future landscape of innovation."
-    },
-    {
-        "name": "Adam Eve",
-        "image": "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-        "description": "Gain insights from successful entrepreneurs on navigating challenges, scaling businesses, and fostering an entrepreneurial spirit."
+        "description": "Join industry leaders as they unveil  technological advancements and discuss the future landscape of innovation."
     },
     {
         "name": "George Christ",

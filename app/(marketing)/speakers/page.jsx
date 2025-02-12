@@ -9,7 +9,7 @@ const WorkshopsPage = () => {
           Industry Speakers
         </h1>
         <p className="text-base md:text-lg mt-6 text-center text-muted-foreground">
-          Latest news and updates.
+          Meet Our Esteemed Speakers
         </p>
       </AnimationContainer>
       <AnimationContainer delay={0.2} className="w-full pt-20">

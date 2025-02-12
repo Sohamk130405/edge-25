@@ -1,4 +1,9 @@
-import { BarChart3Icon, FolderOpenIcon, WandSparklesIcon } from "lucide-react";
+import {
+  MousePointerClick,
+  ReceiptIndianRupee,
+  Mail,
+  Ticket,
+} from "lucide-react";
 
 export const DEFAULT_AVATAR_URL =
   "https://api.dicebear.com/8.x/initials/svg?backgroundType=gradientLinear&backgroundRotation=0,360&seed=";
@@ -8,27 +13,27 @@ export const PAGINATION_LIMIT = 10;
 export const COMPANIES = [
   {
     name: "Asana",
-    logo: "/assets/company-01.svg",
+    logo: "/assets/1.png",
   },
   {
     name: "Tidal",
-    logo: "/assets/company-02.svg",
+    logo: "/assets/2.png",
   },
   {
     name: "Innovaccer",
-    logo: "/assets/company-03.svg",
+    logo: "/assets/3.png",
   },
   {
     name: "Linear",
-    logo: "/assets/company-04.svg",
+    logo: "/assets/4.png",
   },
   {
     name: "Raycast",
-    logo: "/assets/company-05.svg",
+    logo: "/assets/5.png",
   },
   {
     name: "Labelbox",
-    logo: "/assets/company-06.svg",
+    logo: "/assets/6.png",
   },
 ];
 
@@ -36,22 +41,22 @@ export const PROCESS = [
   {
     title: "Click Register",
     description: "Enter your credentials and Sign In on vierp.",
-    icon: FolderOpenIcon,
+    icon: MousePointerClick,
   },
   {
     title: "Go to payments",
     description: "Check for event fees section and pay.",
-    icon: WandSparklesIcon,
+    icon: ReceiptIndianRupee,
   },
   {
     title: "Check Email",
     description: "Email containing credentials will send soon",
-    icon: BarChart3Icon,
+    icon: Mail,
   },
   {
     title: "Get Ticket",
     description: "SignIn and collect ticket From website",
-    icon: BarChart3Icon,
+    icon: Ticket,
   },
 ];
 
