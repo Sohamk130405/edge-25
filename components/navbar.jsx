@@ -21,6 +21,7 @@ import { cn } from "@/utils/functions/cn";
 import { NAV_LINKS } from "@/utils/constants/nav-links";
 import { useCurrentUser } from "@/hooks/user/useCurrentUser";
 import { useAuthActions } from "@convex-dev/auth/react";
+import Image from "next/image";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const { data: user } = useCurrentUser();
@@ -50,10 +51,11 @@ const Navbar = () => {
       <AnimationContainer reverse delay={0.1} className="size-full">
         <MaxWidthWrapper className="flex items-center justify-between">
           <div className="flex items-center space-x-12">
-            <Link href="/#home">
-              <span className="text-lg font-bold font-heading !leading-none">
+            <Link href="/#home" className="w-32">
+              <Image src={"/logo.png"} alt="logo" height={1024} width={1024} />
+              {/* <span className="text-lg font-bold font-heading !leading-none">
                 EDGE 25
-              </span>
+              </span> */}
             </Link>
 
             <NavigationMenu className="hidden lg:flex">

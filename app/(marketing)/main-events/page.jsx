@@ -21,9 +21,9 @@ const MainEventPage = () => {
             </p>
           </div>
         </AnimationContainer>
-        <div className="flex gap-2 flex-wrap md:flex-nowrap">
+        <div className="grid  md:grid-cols-2 gap-2 place-content-center">
           <AnimationContainer delay={0.2} className="w-full">
-            <div className="w-full flex flex-col max-w-4xl py-10 space-y-4">
+            <div className="w-full flex flex-col max-w-xl py-10 space-y-4 items-center">
               <Image
                 src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1184&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Group Disscussions"
@@ -32,10 +32,14 @@ const MainEventPage = () => {
                 className="w-full h-[360px] rounded-lg"
               />
               <MagicBadge title="Group Disscussions" />
+              <p className="text-muted-foreground text-center">
+                Immerse yourself in group sessions tailored to equip individuals
+                with essential skills for boosting confidence in the job market.
+              </p>
             </div>
           </AnimationContainer>
           <AnimationContainer delay={0.2} className="w-full">
-            <div className="w-full flex flex-col max-w-4xl py-10 space-y-4">
+            <div className="w-full flex flex-col max-w-xl py-10 space-y-4 items-center">
               <Image
                 src="https://images.unsplash.com/photo-1622674777904-386b3ef30c4a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Group Disscussions"
@@ -44,6 +48,11 @@ const MainEventPage = () => {
                 className="w-full h-[360px] rounded-lg"
               />
               <MagicBadge title="Personal Interviews" />
+              <p className="text-muted-foreground text-center">
+                Experience the interview with one-on-one
+                sessions providing personalized feedback to enhance
+                communication skills and proficiency.
+              </p>
             </div>
           </AnimationContainer>
         </div>

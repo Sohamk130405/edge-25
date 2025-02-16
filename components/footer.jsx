@@ -30,14 +30,14 @@ const Footer = () => {
         </AnimationContainer>
 
         <div className="grid-cols-1 gap-8 grid mt-16 xl:col-span-2 xl:mt-0">
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-2">
             <AnimationContainer delay={0.3}>
               <div className="md:mt-0 flex flex-col">
                 <h3 className="text-base font-medium text-white">Social</h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="https://www.instagram.com/vit_abhivriddhi/"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Instagram
@@ -45,7 +45,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="https://www.youtube.com/@vit_abhivriddhi"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Youtube
@@ -53,7 +53,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href=""
+                      href="https://www.linkedin.com/company/abhivriddhi-vit-pune/"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       LinkedIn
@@ -88,39 +88,6 @@ const Footer = () => {
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Main-Events
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </AnimationContainer>
-            <AnimationContainer delay={0.5}>
-              <div className="md:mt-0 flex flex-col">
-                <h3 className="text-base font-medium text-white">
-                  Abhivriddhi
-                </h3>
-                <ul className="mt-4 text-sm text-muted-foreground">
-                  <li className="">
-                    <Link
-                      href=""
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      About Us
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href="/privacy"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href="/terms"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Terms & Conditions
                     </Link>
                   </li>
                 </ul>

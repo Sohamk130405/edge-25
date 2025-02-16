@@ -1,24 +1,12 @@
-import { Metadata } from "next";
-
 export const generateMetadata = ({
-  title = `${process.env.NEXT_PUBLIC_APP_NAME} - The Link Management Platform for Businesses`,
-  description = `${process.env.NEXT_PUBLIC_APP_NAME} is the link management platform for businesses. It helps you build, brand, and track your links.`,
-  image = "/thumbnail.png",
+  title = `${process.env.NEXT_PUBLIC_APP_NAME} - Explore, Develop, Grow, Excel`,
+  description = `${process.env.NEXT_PUBLIC_APP_NAME} s VIT Pune's Annual Student Summit.
+A transformative platform offering students a unique opportunity to gain practical insights from industry mentors.`,
+  image = "/thumbnail.jpg",
   icons = [
     {
-      rel: "apple-touch-icon",
-      sizes: "32x32",
-      url: "/apple-touch-icon.png",
-    },
-    {
       rel: "icon",
-      sizes: "32x32",
-      url: "/favicon-32x32.png",
-    },
-    {
-      rel: "icon",
-      sizes: "16x16",
-      url: "/favicon-16x16.png",
+      url: "/logo.png",
     },
   ],
   noIndex = false,
@@ -35,8 +23,7 @@ export const generateMetadata = ({
     title,
     description,
     ...(image && { card: "summary_large_image", images: [image] }),
-    creator: "@shreyassihasane",
+    creator: "@sohamkolhatkar",
   },
-  // metadataBase: new URL(process.env.APP_DOMAIN!),
   ...(noIndex && { robots: { index: false, follow: false } }),
 });

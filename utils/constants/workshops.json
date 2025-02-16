@@ -1,26 +1,26 @@
 [
     {
-        "title": "Off-campus Placement Roadmap Workshop",
-        "image": "/assets/blog1.jpg",
+        "title": "Money Made Simple 💰",
+        "image": "/assets/money.jpg",
         "author_image": "https://example.com/images/author1.jpg",
-        "description": "Navigate the intricacies of off-campus placements with expert insights, charting a strategic path for success. Tailor your approach for placement."
+        "description": "Financial security starts with the right knowledge. Smart saving, budgeting, and investment strategies pave the way for long-term stability and growth."
     },
     {
-        "title": "Alchemy of Modern AI Tools Workshop",
-        "image": "/assets/blog2.jpg",
+        "title": "AI-Powered Productivity 🤖",
+        "image": "/assets/ai.jpg",
         "author_image": "https://example.com/images/author2.jpg",
-        "description": "Explore the transformative realm of artificial intelligence, delving into cutting-edge tools and understanding their applications in the modern world."
+        "description": "AI is reshaping the way work gets done. Leveraging the right tools can simplify tasks, enhance efficiency, and unlock new levels of productivity."
     },
     {
-        "title": "Personal Branding Workshop",
-        "image": "/assets/blog3.jpg",
+        "title": "From Profile to Placement 🔗",
+        "image": "/assets/placement.jpg",
         "author_image": "https://example.com/images/author3.jpg",
-        "description": "Craft a powerful and authentic personal brand that sets you apart in the professional landscape, leveraging effective self-presentation strategies."
+        "description": "A compelling LinkedIn profile and well-crafted resume create strong professional impressions. The right approach increases visibility and attracts better career opportunities."
     },
     {
-        "title": "The Five Fold Triumph - A Five-Stage Competition",
-        "image": "/assets/blog4.jpg",
+        "title": "Personal Branding 🚀",
+        "image": "/assets/branding.avif",
         "author_image": "https://example.com/images/author4.jpg",
-        "description": "Engage in Zenga challenges, captivating debates, promising a thrilling journey testing various skills and showcasing talents."
+        "description": "A strong personal brand builds credibility and sets individuals apart in a competitive world. Authenticity and consistency play a key role in making a lasting impact."
     }
 ]

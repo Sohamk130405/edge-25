@@ -29,9 +29,7 @@ const SignInCard = ({ setState }) => {
     <Card className="w-full h-full p-8">
       <CardHeader className="px-0 pt-0">
         <CardTitle>Login to continue</CardTitle>
-        <CardDescription>
-          Use your email or another service to continue
-        </CardDescription>
+        <CardDescription>Check your email for credentials</CardDescription>
       </CardHeader>
       {!!error && (
         <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
@@ -67,7 +65,7 @@ const SignInCard = ({ setState }) => {
           </Button>
         </form>
         <Separator />
-        <p className="text-xs text-muted-foreground text-center">
+        {/* <p className="text-xs text-muted-foreground text-center">
           Don&apos;t have an account?{" "}
           <span
             className="text-sky-700 hover:underline cursor-pointer"
@@ -75,7 +73,7 @@ const SignInCard = ({ setState }) => {
           >
             Sign Up
           </span>
-        </p>
+        </p> */}
       </CardContent>
     </Card>
   );

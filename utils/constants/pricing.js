@@ -1,83 +1,55 @@
 export const PLANS = [
   {
-    name: "Free",
+    name: "EDGE",
     info: "For most individuals",
     price: {
-      monthly: 0,
-      yearly: 0,
+      monthly: 119,
+      yearly: 141,
     },
     features: [
-      { text: "Shorten links" },
-      { text: "Up to 100 tags", limit: "100 tags" },
-      { text: "Customizable branded links" },
-      { text: "Track clicks", tooltip: "1K clicks/month" },
+      { text: "Speaker Sessions" },
+      { text: "Money Made Simple" },
+      { text: "AI-Powered Productivity" },
       {
-        text: "Community support",
-        tooltip: "Get answers your questions on discord",
-      },
-      {
-        text: "AI powered suggestions",
-        tooltip: "Get up to 100 AI powered suggestions",
+        text: "Personal Branding",
       },
     ],
-    btn: {
-      text: "Register Now",
-      href: "https://learner.vierp.in",
-      variant: "default",
-    },
   },
   {
-    name: "Pro",
-    info: "For small businesses",
+    name: "EDGE + MOCK GDPI",
+    info: "For best experience",
     price: {
-      monthly: 9,
-      yearly: Math.round(9 * 12 * (1 - 0.12)),
+      monthly: 149,
+      yearly: 176,
     },
     features: [
-      { text: "Shorten links" },
-      { text: "Up to 500 tags", limit: "500 tags" },
-      { text: "Customizable branded links" },
-      { text: "Track clicks", tooltip: "20K clicks/month" },
-      { text: "Export click data", tooltip: "Upto 1K links" },
-      { text: "Priority support", tooltip: "Get 24/7 chat support" },
+      { text: "Group Discussions" },
+      { text: "Personal Interviews" },
+      { text: "Speaker Sessions" },
+      { text: "Money Made Simple" },
+      { text: "AI-Powered Productivity" },
       {
-        text: "AI powered suggestions",
-        tooltip: "Get up to 500 AI powered suggestions",
+        text: "From Profile to Placement",
+      },
+      {
+        text: "Personal Branding",
       },
     ],
-    btn: {
-      text: "Register Now",
-      href: "https://learner.vierp.in",
-      variant: "purple",
-    },
   },
   {
-    name: "Business",
-    info: "For large organizations",
+    name: "MOCK GDPI",
+    info: "Placement Specific",
     price: {
-      monthly: 49,
-      yearly: Math.round(49 * 12 * (1 - 0.12)),
+      monthly: 89,
+      yearly: 106,
     },
     features: [
-      { text: "Shorten links" },
-      { text: "Unlimited tags" },
-      { text: "Customizable branded links" },
-      { text: "Track clicks", tooltip: "Unlimited clicks" },
-      { text: "Export click data", tooltip: "Unlimited clicks" },
+      { text: "Group Discussions" },
+      { text: "Personal Interviews" },
       {
-        text: "Dedicated manager",
-        tooltip: "Get priority support from our team",
-      },
-      {
-        text: "AI powered suggestions",
-        tooltip: "Get unlimited AI powered suggestions",
+        text: "From Profile to Placement",
       },
     ],
-    btn: {
-      text: "Register Now",
-      href: "https://learner.vierp.ins",
-      variant: "default",
-    },
   },
 ];
 

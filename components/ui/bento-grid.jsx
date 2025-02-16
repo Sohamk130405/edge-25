@@ -25,7 +25,7 @@ export const CARDS = [
   {
     Icon: ListIcon,
     name: "Register Now",
-    description: "Sign up for EDGE and its sub-events effortlessly.",
+    description: "Enroll for EDGE and its sub-events effortlessly.",
     href: "https://learner.vierp.in",
     cta: "Register",
     className: "col-span-3 lg:col-span-1",
@@ -51,11 +51,10 @@ export const CARDS = [
   {
     Icon: CalendarIcon,
     name: "Event Contents",
-    description:
-      "Explore the detailed contents of the event, including workshops, speaker sessions, mock group discussions, and personal interviews.",
-    href: "/contents",
-    cta: "View Contents",
-    className: "col-span-3 lg:col-span-2",
+    description: "Explore the detailed contents of the event.",
+    href: "/main-events",
+    cta: "Main Events",
+    className: "col-span-3 lg:col-span-1",
     background: (
       <div className="absolute right-0 top-10 origin-top rounded-md border border-border transition-all duration-300 ease-out p-4 bg-background grid grid-cols-2 gap-4 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105">
         <div className="flex flex-col items-center justify-center  rounded-lg bg-secondary/20 text-primary">
@@ -114,41 +113,41 @@ export const CARDS = [
     ),
   },
 
-  {
-    Icon: UsersIcon,
-    name: "Meet the Mentors",
-    description: "Learn from industry experts and experienced mentors.",
-    href: "/mentors",
-    cta: "Learn More",
-    className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
-    background: (
-      <div className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
-        {/* Replace with mentor profile cards */}
-        <div className="flex items-center">
-          <User className="size-10" />
-          <div className="flex flex-col items-start p-4">
-            <p className="text-lg font-semibold text-neutral-300">John Doe</p>
-            <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
-          </div>
-        </div>
+  // {
+  //   Icon: UsersIcon,
+  //   name: "Meet the Mentors",
+  //   description: "Learn from industry experts and experienced mentors.",
+  //   href: "/mentors",
+  //   cta: "Learn More",
+  //   className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
+  //   background: (
+  //     <div className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105">
+  //       {/* Replace with mentor profile cards */}
+  //       <div className="flex items-center">
+  //         <User className="size-10" />
+  //         <div className="flex flex-col items-start p-4">
+  //           <p className="text-lg font-semibold text-neutral-300">John Doe</p>
+  //           <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
+  //         </div>
+  //       </div>
 
-        <div className="flex items-center">
-          <User className="size-10" />
-          <div className="flex flex-col items-start p-4">
-            <p className="text-lg font-semibold text-neutral-300">Jane Smith</p>
-            <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
+  //       <div className="flex items-center">
+  //         <User className="size-10" />
+  //         <div className="flex flex-col items-start p-4">
+  //           <p className="text-lg font-semibold text-neutral-300">Jane Smith</p>
+  //           <p className="text-sm text-neutral-400">Software Engineer at ABC</p>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   ),
+  // },
   {
     Icon: CalendarIcon,
     name: "Your Event Calendar",
     description: "Personalize your EDGE schedule and track your events.",
     className: "col-span-3 lg:col-span-1",
-    href: "/my-calendar",
-    cta: "View Calendar",
+    href: "/",
+    cta: "Are you ready?",
     background: (
       <Calendar
         mode="range"

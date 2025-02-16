@@ -54,27 +54,27 @@ const PricingCards = () => {
 
       <TabsContent
         value="Vitian"
-        className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full md:gap-8 flex-wrap max-w-5xl mx-auto pt-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full md:gap-8 flex-wrap max-w-5xl mx-auto pt-6"
       >
         {PLANS.map((plan) => (
           <Card
             key={plan.name}
             className={cn(
               "flex flex-col w-full border-border rounded-xl",
-              plan.name === "Pro" && "border-2 border-purple-500"
+              plan.name === "EDGE + MOCK GDPI" && "border-2 border-purple-500"
             )}
           >
             <CardHeader
               className={cn(
                 "border-b border-border",
-                plan.name === "Pro"
+                plan.name === "EDGE + MOCK GDPI"
                   ? "bg-purple-500/[0.07]"
                   : "bg-foreground/[0.03]"
               )}
             >
               <CardTitle
                 className={cn(
-                  plan.name !== "Pro" && "text-muted-foreground",
+                  plan.name !== "EDGE + MOCK GDPI" && "text-muted-foreground",
                   "text-lg font-medium"
                 )}
               >
@@ -116,27 +116,27 @@ const PricingCards = () => {
       </TabsContent>
       <TabsContent
         value="Non-Vitian"
-        className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full md:gap-8 flex-wrap max-w-5xl mx-auto pt-6"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full md:gap-8 flex-wrap max-w-5xl mx-auto pt-6"
       >
         {PLANS.map((plan) => (
           <Card
             key={plan.name}
             className={cn(
               "flex flex-col w-full border-border rounded-xl",
-              plan.name === "Pro" && "border-2 border-purple-500"
+              plan.name === "EDGE + MOCK GDPI" && "border-2 border-purple-500"
             )}
           >
             <CardHeader
               className={cn(
                 "border-b border-border",
-                plan.name === "Pro"
+                plan.name === "EDGE + MOCK GDPI"
                   ? "bg-purple-500/[0.07]"
                   : "bg-foreground/[0.03]"
               )}
             >
               <CardTitle
                 className={cn(
-                  plan.name !== "Pro" && "text-muted-foreground",
+                  plan.name !== "EDGE + MOCK GDPI" && "text-muted-foreground",
                   "text-lg font-medium"
                 )}
               >

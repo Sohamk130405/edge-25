@@ -1,7 +1,17 @@
 import AnimationContainer from "@/components/animation-container";
+import ComingSoon from "@/components/coming-soon";
 import SpeakerSessions from "@/components/speaker-sessions";
 
 const WorkshopsPage = () => {
+  if(true){
+    if (true) {
+      return (
+        <div className="h-full p-10">
+          <ComingSoon />
+        </div>
+      );
+    }
+  }
   return (
     <div className="flex flex-col items-center justify-center pb-20">
       <AnimationContainer delay={0.1} className="w-full">

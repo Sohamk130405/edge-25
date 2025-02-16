@@ -7,13 +7,10 @@ import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 
-
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS } from "@/utils/constants/misc";
-import {
-  ArrowRightIcon,
-} from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -69,7 +66,7 @@ const HomePage = async () => {
             <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
               <BorderBeam size={250} duration={12} delay={9} />
               <Image
-                src="/assets/edge.jpg"
+                src="/thumbnail.png"
                 alt="Dashboard"
                 width={1200}
                 height={1200}
@@ -150,7 +147,7 @@ const HomePage = async () => {
             </p>
           </div>
         </AnimationContainer>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full py-8 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full py-8 gap-4 md:gap-8">
           {PROCESS.map((process, id) => (
             <AnimationContainer delay={0.2 * id} key={id}>
               <MagicCard className="group md:py-8">
@@ -180,12 +177,12 @@ const HomePage = async () => {
       {/* Pricing Section */}
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
-          <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+          <div className="flex flex-col items-center justify-center w-full py-8 max-w-xl mx-auto">
             <MagicBadge title="Simple Pricing" />
-            <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
+            <h2 className="text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               Choose a ticket that works for you
             </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
+            <p className="mt-4 text-center text-lg text-muted-foreground max-w-lg">
               Participate in EDGE 25 today and take one step ahead.
             </p>
           </div>
