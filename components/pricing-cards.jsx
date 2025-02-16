@@ -82,7 +82,7 @@ const PricingCards = () => {
               </CardTitle>
               <CardDescription>{plan.info}</CardDescription>
               <h5 className="text-3xl font-semibold flex items-end">
-                ₹{plan.price.yearly}
+                ₹{plan.price.monthly}
               </h5>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
@@ -144,7 +144,7 @@ const PricingCards = () => {
               </CardTitle>
               <CardDescription>{plan.info}</CardDescription>
               <h5 className="text-3xl font-semibold flex items-end">
-                ₹{plan.price.monthly}
+                ₹{plan.price.yearly}
               </h5>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
