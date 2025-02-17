@@ -52,7 +52,12 @@ const Navbar = () => {
         <MaxWidthWrapper className="flex items-center justify-between">
           <div className="flex items-center space-x-12">
             <Link href="/#home" className="w-32">
-              <Image src={"/logo.png"} alt="logo" height={1024} width={1024} />
+              <Image
+                src={"/assets/logo.png"}
+                alt="logo"
+                height={1024}
+                width={1024}
+              />
               {/* <span className="text-lg font-bold font-heading !leading-none">
                 EDGE 25
               </span> */}

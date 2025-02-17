@@ -62,7 +62,7 @@ const AboutPage = () => {
           <AnimationContainer delay={0.2} className="w-full">
             <div className="w-full flex max-w-4xl py-10 mx-auto">
               <Image
-                src="/thumbnail.png"
+                src="/assets/thumbnail.png"
                 alt="EDGE"
                 width={1024}
                 height={1024}
