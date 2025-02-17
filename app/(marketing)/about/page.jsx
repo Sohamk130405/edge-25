@@ -11,6 +11,30 @@ import { useState } from "react";
 
 const AboutPage = () => {
   const [isLearnMore, setLearnMore] = useState(false);
+
+  const teamMembers = [
+    {
+      name: "Vaishnav Bhor",
+      role: "President",
+      number: "+91 9876543210",
+    },
+    {
+      name: "Piyush Butadaw",
+      role: "President",
+      number: "+91 8765432109",
+    },
+    {
+      name: "Shubham Pathak",
+      role: "Outreach Executive",
+      number: "+91 7654321098",
+    },
+    {
+      name: "Simran Roham",
+      role: "Outreach Executive",
+      number: "+91 6543210987",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center pb-20">
       <AnimationContainer delay={0.1} className="w-full">
@@ -95,10 +119,36 @@ const AboutPage = () => {
               </div>
             </div>
           </AnimationContainer>
+
+          {/* Team Details Section */}
+          <AnimationContainer delay={0.4} className="w-full py-10">
+            <div className="mx-auto text-center w-full">
+              <h2 className="text-2xl md:text-3xl font-semibold font-heading mb-6">
+                Contact Our Team
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 w-full">
+                {teamMembers.map((member) => (
+                  <div
+                    key={member.name}
+                    className=" px-2 py-6 bg-opacity-50 backdrop-blur-lg rounded-lg ring-1 ring-border/20 shadow-lg"
+                  >
+                    <h3 className="text-xl font-medium">{member.name}</h3>
+                    <p className="text-lg text-muted-foreground">
+                      {member.role}
+                    </p>
+                    <p className="text-sm mt-2 text-muted-foreground">
+                      {member.number}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimationContainer>
+
           <Lightup
             title={"Fostering Changes And Impacting Lives"}
             desc={
-              "E.D.G.E empowers students with real-world insights through mockGroup Discussions, Personal Interviews, and expert mentorship,enhancing communication, teamwork, and problem-solving skills forprofessional success."
+              "E.D.G.E empowers students with real-world insights through mock Group Discussions, Personal Interviews, and expert mentorship, enhancing communication, teamwork, and problem-solving skills for professional success."
             }
           />
         </MaxWidthWrapper>
