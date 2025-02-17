@@ -57,8 +57,8 @@ const VideoPlayer = ({ videoSrc }) => {
         ref={videoRef}
         src={videoSrc}
         alt="video"
-        width={1024}
-        height={1024}
+        width={1200}
+        height={1200}
         onClick={togglePlayPause}
         className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"
       />
