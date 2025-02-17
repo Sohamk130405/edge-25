@@ -19,7 +19,7 @@ const AboutPage = () => {
       number: "+91 9876543210",
     },
     {
-      name: "Piyush Butadaw",
+      name: "Piyush Bhutada",
       role: "President",
       number: "+91 8765432109",
     },
