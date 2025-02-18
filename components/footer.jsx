@@ -20,7 +20,7 @@ const Footer = () => {
             <span className="mt-4 text-neutral-200 text-sm flex items-center">
               Organized by{" "}
               <Link
-                href="https://abhivriddhivitpune.com"
+                href="https://abhivriddhivitpune.in"
                 className="font-semibold ml-1"
               >
                 Abhivriddhi

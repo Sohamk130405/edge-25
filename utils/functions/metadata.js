@@ -1,29 +1,76 @@
 export const generateMetadata = ({
   title = `${process.env.NEXT_PUBLIC_APP_NAME} - Explore, Develop, Grow, Excel`,
-  description = `${process.env.NEXT_PUBLIC_APP_NAME} s VIT Pune's Annual Student Summit.
-A transformative platform offering students a unique opportunity to gain practical insights from industry mentors.`,
-  image = "/assets/thumbnail.jpg",
-  icons = [
-    {
-      rel: "icon",
-      url: "/assets/logo.png",
-    },
+  description = `${process.env.NEXT_PUBLIC_APP_NAME} is VIT Pune's Annual Student Summit. A transformative platform offering students a unique opportunity to gain practical insights from industry mentors.`,
+  image = "/assets/thumbnail.png",
+  iconUrl = "/assets/logo.png",
+  keywords = [
+    "Abhivriddhi",
+    "Abhivriddhi VIT Pune",
+    "edge",
+    "edge 25",
+    "EDGE",
+    "EDGE 2025",
+    "EDGE 25",
+    "abhivriddhi edge",
+    "abhivriddhi vit",
+    "abhivriddhi vit pune",
+    "edge.abhivriddhivitpune.in",
+    "abhivriddhivitpune",
+    "VIT Pune",
+    "Student Summit",
+    "Explore",
+    "Develop",
+    "Grow",
+    "Excel",
+    "Industry Mentors",
   ],
+  canonical = `${process.env.NEXT_PUBLIC_SITE_URL}`,
   noIndex = false,
 } = {}) => ({
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   title,
   description,
-  icons,
+  keywords: keywords.join(", "),
+  icons: [
+    {
+      rel: "icon",
+      url: iconUrl,
+      type: "image/png",
+      sizes: "2048x564",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: iconUrl,
+      sizes: "2048x564",
+    },
+  ],
   openGraph: {
+    type: "website",
     title,
     description,
-    ...(image && { images: [{ url: image }] }),
+    url: canonical,
+    ...(image && {
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    }),
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description,
-    ...(image && { card: "summary_large_image", images: [image] }),
     creator: "@sohamkolhatkar",
+    ...(image && { images: [image] }),
   },
   ...(noIndex && { robots: { index: false, follow: false } }),
+  link: [
+    {
+      rel: "canonical",
+      href: canonical,
+    },
+  ],
 });
