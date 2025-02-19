@@ -8,23 +8,23 @@ import { ArrowRightIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogOverlay,
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import { useSendEmail } from "@/hooks/useSendEmail";
+import { toast } from "sonner";
 
 const Lightup = ({ title, desc }) => {
+  const { send, loading, response } = useSendEmail();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStatus, setFormStatus] = useState(null);
 
   const closeContactModal = () => setIsContactModalOpen(false);
   const openContactModal = () => setIsContactModalOpen(true);
@@ -39,28 +39,15 @@ const Lightup = ({ title, desc }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("https://formspree.io/f/myzkbnng", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setFormStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setFormStatus("error");
-      }
-    } catch (error) {
-      setFormStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+    await send(formData);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    setIsContactModalOpen(false);
+    if (response.success) toast.success(response.message);
+    else toast.error(response.message);
   };
 
   return (
@@ -119,22 +106,10 @@ const Lightup = ({ title, desc }) => {
               <Button variant="ghost" type="button" onClick={closeContactModal}>
                 Close
               </Button>
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit"}
+              <Button type="submit" disabled={loading}>
+                {loading ? "Submitting..." : "Submit"}
               </Button>
             </div>
-
-            {formStatus && (
-              <div
-                className={`mt-4 text-sm ${
-                  formStatus === "success" ? "text-green-500" : "text-red-500"
-                }`}
-              >
-                {formStatus === "success"
-                  ? "Thank you for contacting us! We will get back to you soon."
-                  : "Something went wrong. Please try again."}
-              </div>
-            )}
           </form>
         </DialogContent>
       </Dialog>
