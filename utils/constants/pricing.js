@@ -14,6 +14,7 @@ export const PLANS = [
         text: "Personal Branding",
       },
     ],
+    link: "https://learner.vierp.in/event/EDGE'252024",
   },
   {
     name: "EDGE + MOCK GDPI",
@@ -35,6 +36,7 @@ export const PLANS = [
         text: "Personal Branding",
       },
     ],
+    link: "https://learner.vierp.in/event/EDGE-With-Mock-GDPI2024",
   },
   {
     name: "MOCK GDPI",
@@ -50,6 +52,7 @@ export const PLANS = [
         text: "From Profile to Placement",
       },
     ],
+    link: "https://learner.vierp.in/event/MOCK-GDPI2024",
   },
 ];
 

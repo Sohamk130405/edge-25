@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -18,6 +19,8 @@ import { PLANS } from "@/utils/constants/pricing";
 import { cn } from "@/utils/functions/cn";
 import { motion } from "framer-motion";
 import { CheckCircleIcon } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const PricingCards = () => {
   const MotionTabTrigger = motion(TabsTrigger);
@@ -27,26 +30,26 @@ const PricingCards = () => {
       defaultValue="Vitian"
       className="w-full flex flex-col items-center justify-center"
     >
-      <TabsList className="flex gap-4">
-        <MotionTabTrigger value="Vitian" className="relative">
+      <TabsList className="flex gap-4 rounded-3xl">
+        <MotionTabTrigger value="Vitian" className="relative rounded-2xl">
           <motion.div
             layoutId="active-tab-indicator"
             transition={{
               type: "spring",
               bounce: 0.5,
             }}
-            className="absolute top-0 left-0 w-full h-full bg-background shadow-sm rounded-md z-10"
+            className="absolute top-0 left-0 w-full h-full shadow-sm  z-10"
           />
           <span className="z-20">Vitian</span>
         </MotionTabTrigger>
-        <MotionTabTrigger value="Non-Vitian" className="relative">
+        <MotionTabTrigger value="Non-Vitian" className="relative rounded-2xl">
           <motion.div
             layoutId="tab-indicator"
             transition={{
               type: "spring",
               bounce: 0.5,
             }}
-            className="absolute top-0 left-0 w-full h-full bg-background shadow-sm rounded-md z-10"
+            className="absolute top-0 left-0 w-full h-full shadow-sm  z-10"
           />
           <span className="z-20">Non Vitian</span>
         </MotionTabTrigger>
@@ -111,6 +114,11 @@ const PricingCards = () => {
                 </div>
               ))}
             </CardContent>
+            <CardFooter className="mt-auto flex justify-center">
+              <Button asChild>
+                <Link href={"https://learner.vierp.in"}>Register now</Link>
+              </Button>
+            </CardFooter>
           </Card>
         ))}
       </TabsContent>
@@ -122,7 +130,7 @@ const PricingCards = () => {
           <Card
             key={plan.name}
             className={cn(
-              "flex flex-col w-full border-border rounded-xl",
+              "flex flex-col w-full border-border rounded-xl relative",
               plan.name === "EDGE + MOCK GDPI" && "border-2 border-purple-500"
             )}
           >
@@ -173,6 +181,11 @@ const PricingCards = () => {
                 </div>
               ))}
             </CardContent>
+            <CardFooter className="mt-auto flex justify-center">
+              <Button asChild>
+                <Link href={plan.link}>Register now</Link>
+              </Button>
+            </CardFooter>
           </Card>
         ))}
       </TabsContent>

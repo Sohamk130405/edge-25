@@ -125,15 +125,9 @@ const Lightup = ({ title, desc }) => {
                 {desc}
               </p>
               <div className="mt-6 flex justify-center space-x-4">
-                <Button asChild>
-                  <Link href="https://learner.vierp.in">
-                    Register Now
-                    <ArrowRightIcon className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
                 <Button
                   onClick={openContactModal}
-                  className="bg-transparent border text-white hover:bg-transparent"
+                  className="bg-transparent border text-white hover:bg-white hover:text-black transition duration-500"
                 >
                   Contact Us
                 </Button>

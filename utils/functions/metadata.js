@@ -2,7 +2,7 @@ export const generateMetadata = ({
   title = `${process.env.NEXT_PUBLIC_APP_NAME} - Explore, Develop, Grow, Excel`,
   description = `${process.env.NEXT_PUBLIC_APP_NAME} is VIT Pune's Annual Student Summit. A transformative platform offering students a unique opportunity to gain practical insights from industry mentors.`,
   image = "/assets/thumbnail.png",
-  iconUrl = "/assets/logo.png",
+  iconUrl = "/assets/abhivriddhi logo.png",
   keywords = [
     "Abhivriddhi",
     "Abhivriddhi VIT Pune",

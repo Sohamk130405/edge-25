@@ -1,3 +1,4 @@
+"use client";
 import AnimationContainer from "@/components/animation-container";
 import EventCountdown from "@/components/EventCountdown";
 import Lightup from "@/components/lightup";
@@ -11,13 +12,11 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import VideoPlayer from "@/components/video-player";
 import { COMPANIES, PROCESS } from "@/utils/constants/misc";
+import { scrollToSection } from "@/utils/functions/scrollTo";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
-const HomePage = async () => {
-  const user = null;
-
+const HomePage = () => {
   return (
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
@@ -47,14 +46,12 @@ const HomePage = async () => {
               </span>
             </p>
             <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-              <Button asChild>
-                <Link
-                  href={"https://learner.vierp.in"}
-                  className="flex items-center"
-                >
-                  Be part of event now
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Link>
+              <Button
+                className="flex items-center"
+                onClick={() => scrollToSection("pricing")}
+              >
+                Be part of event now
+                <ArrowRightIcon className="w-4 h-4 ml-2" />
               </Button>
             </div>
           </AnimationContainer>
@@ -171,7 +168,10 @@ const HomePage = async () => {
       {/* Pricing Section */}
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
-          <div className="flex flex-col items-center justify-center w-full py-8 max-w-xl mx-auto">
+          <div
+            id="pricing"
+            className="flex flex-col items-center justify-center w-full py-8 max-w-xl mx-auto"
+          >
             <MagicBadge title="Simple Pricing" />
             <h2 className="text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
               Choose a ticket that works for you
