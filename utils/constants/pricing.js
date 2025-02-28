@@ -45,13 +45,7 @@ export const PLANS = [
       monthly: 89,
       yearly: 106,
     },
-    features: [
-      { text: "Group Discussions" },
-      { text: "Personal Interviews" },
-      {
-        text: "From Profile to Placement",
-      },
-    ],
+    features: [{ text: "Group Discussions" }, { text: "Personal Interviews" }],
     link: "https://learner.vierp.in/event/MOCK-GDPI2024",
   },
 ];

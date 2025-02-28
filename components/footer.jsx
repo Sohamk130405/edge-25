@@ -2,6 +2,7 @@ import Link from "next/link";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import AnimationContainer from "./animation-container";
 import { Icons } from "./icons";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -12,7 +13,13 @@ const Footer = () => {
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-start justify-start md:max-w-[200px]">
             <div className="flex items-start">
-              <Icons.logo className="w-7 h-7" />
+              <Image
+                src={"/assets/logo.png"}
+                alt="logo"
+                height={720}
+                width={1024}
+                className="w-auto h-7"
+              />
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
               Explore, Develop, Grow, Excel with EDGE 25
