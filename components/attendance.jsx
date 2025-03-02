@@ -33,6 +33,7 @@ export default function Attendance() {
   const [scanResult, setScanResult] = useState(null);
   const [alert, setAlert] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+
   const { mutate: markAttendance, isPending } = useCreateAttendance();
   const { data: attendanceRecords } = useGetAttendanceRecords({
     sessionName: selectedSession,
@@ -43,9 +44,27 @@ export default function Attendance() {
       if (isPending) return;
       if (data) {
         setScanResult(data);
+
+        // Convert scanned PRN to integer
+        const scannedPRN = parseInt(data, 10);
+
+        // Check if PRN already exists in attendanceRecords
+        const isAlreadyMarked = attendanceRecords?.some(
+          (record) => record.user.prn === scannedPRN
+        );
+
+        if (isAlreadyMarked) {
+          setAlert({
+            type: "error",
+            message: "Attendance Already Marked",
+          });
+          return;
+        }
+
+        // If not marked, proceed with mutation
         try {
           await markAttendance(
-            { sessionId: selectedSession, prn: parseInt(data) },
+            { sessionId: selectedSession, prn: scannedPRN },
             {
               onSuccess: () => {
                 setAlert({
@@ -56,17 +75,17 @@ export default function Attendance() {
               onError: () => {
                 setAlert({
                   type: "error",
-                  message: "Attendance Already Marked",
+                  message: "Failed to mark attendance",
                 });
               },
             }
           );
         } catch (error) {
-          setAlert({ type: "error", message: "Attendance Already Marked" });
+          setAlert({ type: "error", message: "Failed to mark attendance" });
         }
       }
     },
-    [selectedSession, isPending]
+    [selectedSession, isPending, attendanceRecords] // Added attendanceRecords dependency
   );
 
   const filteredRecords = attendanceRecords?.filter(
