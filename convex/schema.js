@@ -5,23 +5,32 @@ import { v } from "convex/values";
 const schema = defineSchema({
   ...authTables,
   users: defineTable({
-    name: v.optional(v.string()),
+    name: v.string(),
+    prn: v.number(),
     ticket: v.union(
-      v.literal("Ticket 1"),
-      v.literal("Ticket 2"),
-      v.literal("Ticket 3")
+      v.literal("EDGE"),
+      v.literal("EDGE + MOCK GDPI"),
+      v.literal("MOCK GDPI")
     ),
-    year: v.optional(
-      v.union(
-        v.literal("First"),
-        v.literal("Second"),
-        v.literal("Third"),
-        v.literal("Fourth")
-      )
+    email: v.string(),
+  })
+    .index("by_email", ["email"])
+    .index("by_prn", ["prn"]),
+
+  sessions: defineTable({
+    name: v.union(
+      v.literal("Workshop 1"),
+      v.literal("Workshop 2"),
+      v.literal("Workshop 3")
     ),
-    email: v.optional(v.string()),
-    phone: v.optional(v.string()),
-  }).index("email", ["email"]),
+  }).index("name", ["name"]),
+
+  attendanceRecords: defineTable({
+    userId: v.string(),
+    sessionId: v.string(),
+  })
+    .index("by_sessionId", ["sessionId"])
+    .index("by_sessionId_userId", ["sessionId", "userId"]),
 });
 
 export default schema;

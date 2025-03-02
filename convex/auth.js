@@ -7,6 +7,7 @@ const CustomPassword = Password({
       email: params.email,
       name: params.name,
       ticket: params.ticket,
+      prn: params.prn,
     };
   },
 });

@@ -22,10 +22,12 @@ import { NAV_LINKS } from "@/utils/constants/nav-links";
 import { useCurrentUser } from "@/hooks/user/useCurrentUser";
 import { useAuthActions } from "@convex-dev/auth/react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const { data: user } = useCurrentUser();
   const { signOut } = useAuthActions();
+  const pathname = usePathname();
   const handleScroll = () => {
     if (window.scrollY > 8) {
       setScroll(true);
@@ -136,9 +138,15 @@ const Navbar = () => {
             {user ? (
               <div className="flex items-center gap-2">
                 <>
-                  <Button>
-                    <Link href="/dashboard">Dashboard</Link>
-                  </Button>
+                  {!pathname.includes("dashboard") ? (
+                    <Button>
+                      <Link href="/dashboard">Dashboard</Link>
+                    </Button>
+                  ) : (
+                    <Button>
+                      <Link href="/">Home</Link>
+                    </Button>
+                  )}
                   <Button
                     onClick={signOut}
                     className={"w-full"}

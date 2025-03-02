@@ -20,6 +20,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useCurrentUser } from "@/hooks/user/useCurrentUser";
 import { useAuthActions } from "@convex-dev/auth/react";
+import { usePathname } from "next/navigation";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +29,7 @@ const MobileNavbar = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+  const pathname = usePathname();
 
   return (
     <div className="flex lg:hidden items-center justify-end">
@@ -50,16 +52,20 @@ const MobileNavbar = () => {
             <div className="flex items-center justify-evenly w-full space-x-2">
               {user ? (
                 <>
-                  <Link
-                    href="/dashboard"
-                    className={buttonVariants({
-                      variant: "outline",
-                      className: "w-full",
-                    })}
+                  {!pathname.includes("dashboard") ? (
+                    <Button>
+                      <Link href="/dashboard">Dashboard</Link>
+                    </Button>
+                  ) : (
+                    <Button>
+                      <Link href="/">Home</Link>
+                    </Button>
+                  )}
+                  <Button
+                    onClick={signOut}
+                    className={"w-full"}
+                    variant="outline"
                   >
-                    Dashboard
-                  </Link>
-                  <Button onClick={signOut} className={"w-full"} variant="outline">
                     Sign Out
                   </Button>
                 </>
