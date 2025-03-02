@@ -15,8 +15,12 @@ import { TriangleAlert } from "lucide-react";
 const SignInCard = ({ setState }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [adminCode, setAdminCode] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
+  const { signIn } = useAuthActions();
+
   const onPasswordSignIn = (e) => {
     e.preventDefault();
     setPending(true);
@@ -24,19 +28,29 @@ const SignInCard = ({ setState }) => {
       .catch(() => setError("Invalid Email or Password"))
       .finally(() => setPending(false));
   };
-  const { signIn } = useAuthActions();
+
+  const handleAdminRegistration = () => {
+    if (adminCode === "280405") {
+      setState("signUp");
+    } else {
+      setError("Invalid Admin Code");
+    }
+  };
+
   return (
     <Card className="w-full h-full p-8">
       <CardHeader className="px-0 pt-0">
         <CardTitle>Login to continue</CardTitle>
         <CardDescription>Check your email for credentials</CardDescription>
       </CardHeader>
+
       {!!error && (
         <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
           <TriangleAlert className="size-4" />
           <p>{error}</p>
         </div>
       )}
+
       <CardContent className="space-y-5 px-0 pb-0">
         <form className="space-y-2.5" onSubmit={onPasswordSignIn}>
           <Input
@@ -64,16 +78,31 @@ const SignInCard = ({ setState }) => {
             Continue
           </Button>
         </form>
+
         <Separator />
-        {/* <p className="text-xs text-muted-foreground text-center">
-          Don&apos;t have an account?{" "}
-          <span
-            className="text-sky-700 hover:underline cursor-pointer"
-            onClick={() => setState("signUp")}
-          >
-            Sign Up
-          </span>
-        </p> */}
+        {!isAdmin ? (
+          <p className="text-muted-foreground">
+            Register new Admin:{" "}
+            <span
+              onClick={() => setIsAdmin(true)}
+              className="text-blue-500 cursor-pointer"
+            >
+              Click here
+            </span>
+          </p>
+        ) : (
+          <div className="space-y-3">
+            <Input
+              type="text"
+              placeholder="Enter Admin Code"
+              value={adminCode}
+              onChange={(e) => setAdminCode(e.target.value)}
+            />
+            <Button className="w-full" onClick={handleAdminRegistration}>
+              Admin Registration
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

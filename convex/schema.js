@@ -10,7 +10,8 @@ const schema = defineSchema({
     ticket: v.union(
       v.literal("EDGE"),
       v.literal("EDGE + MOCK GDPI"),
-      v.literal("MOCK GDPI")
+      v.literal("MOCK GDPI"),
+      v.literal("Admin")
     ),
     email: v.string(),
   })

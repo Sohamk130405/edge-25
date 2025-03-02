@@ -12,29 +12,29 @@ import { useState } from "react";
 import { useAuthActions } from "@convex-dev/auth/react";
 import { TriangleAlert } from "lucide-react";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
 const SignUpCard = ({ setState }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [ticket, setTicket] = useState("Ticket 1");
+  const ticket = "Admin";
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [pending, setPending] = useState(false);
   const { signIn } = useAuthActions();
   const [error, setError] = useState("");
+  const [prn, setPrn] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) return setError("Passwords do not match");
     setPending(true);
-    signIn("password", { name, email, password, ticket, flow: "signUp" })
+    signIn("password", {
+      name,
+      email,
+      prn: parseInt(prn),
+      password,
+      ticket,
+      flow: "signUp",
+    })
       .catch(() => setError("Something went wrong"))
       .finally(() => setPending(pending));
   };
@@ -71,18 +71,14 @@ const SignUpCard = ({ setState }) => {
             placeholder="Email"
             required
           />
-
-          <Select value={ticket} onValueChange={setTicket} required>
-            <SelectTrigger>
-              <SelectValue placeholder="Ticket" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Ticket 1">Ticket 1</SelectItem>
-              <SelectItem value="Ticket 2">Ticket 2</SelectItem>
-              <SelectItem value="Ticket 3">Ticket 3</SelectItem>
-            </SelectContent>
-          </Select>
-
+          <Input
+            type="number"
+            disabled={pending}
+            value={prn}
+            onChange={(e) => setPrn(e.target.value)}
+            placeholder="Enter PRN"
+            required
+          />
           <Input
             type="password"
             disabled={pending}

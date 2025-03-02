@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const Admin = () => {
   const { data, isLoading } = useCurrentUser();
   const router = useRouter();
-  if (!isLoading && data.name !== "Admin") {
+  if (!isLoading && data.ticket !== "Admin") {
     return router.replace("/dashboard");
   }
   return (

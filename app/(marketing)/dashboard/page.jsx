@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useCurrentUser } from "@/hooks/user/useCurrentUser";
-import { useAuthActions } from "@convex-dev/auth/react";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -21,10 +19,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const DashboardPage = () => {
-  const router = useRouter();
   const { data: user, isLoading } = useCurrentUser();
 
-  const { signOut } = useAuthActions();
   const [isOpen, setIsOpen] = useState(false);
   const imageUrl =
     "https://plus.unsplash.com/premium_vector-1736507340724-bb4a869e4e9d?q=80&w=2052&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -93,7 +89,7 @@ const DashboardPage = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-              {!isLoading && (
+              {!isLoading && user.ticket === "Admin" && (
                 <Button>
                   <Link href={"/dashboard/admin"}>Admin Portal</Link>
                 </Button>
