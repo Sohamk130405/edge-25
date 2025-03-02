@@ -2,7 +2,6 @@ import { v } from "convex/values";
 import { mutation } from "./_generated/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
 import { query } from "./_generated/server";
-import { Error } from "convex/values";
 const populateUser = async (ctx, userId) => {
   return await ctx.db.get(userId);
 };
