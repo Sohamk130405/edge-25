@@ -17,6 +17,8 @@ import {
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowDown, ArrowRight } from "lucide-react";
+import PlacementTips from "@/components/placement-tips";
 
 const DashboardPage = () => {
   const { data: user, isLoading } = useCurrentUser();
@@ -74,13 +76,27 @@ const DashboardPage = () => {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>LinkedIn Banner</AccordionTrigger>
                   <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
+                    <Link
+                      className="flex items-center hover:underline"
+                      href={"assets/banner.pptx"}
+                    >
+                      Download now
+                      <ArrowDown className="ml-auto size-4" />
+                    </Link>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger>Resume Template</AccordionTrigger>
                   <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
+                    <Link
+                      className="flex items-center hover:underline"
+                      href={
+                        "https://www.overleaf.com/latex/templates/resume-professional-template-software-engineer/ttwtyxskrcsz"
+                      }
+                    >
+                      Checkout Template
+                      <ArrowRight className="ml-auto size-4" />
+                    </Link>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
@@ -97,6 +113,7 @@ const DashboardPage = () => {
               )}
             </AnimationContainer>
           </div>
+          <PlacementTips/>
         </MaxWidthWrapper>
       </div>
 
