@@ -19,11 +19,7 @@ const schema = defineSchema({
     .index("by_prn", ["prn"]),
 
   sessions: defineTable({
-    name: v.union(
-      v.literal("Workshop 1"),
-      v.literal("Workshop 2"),
-      v.literal("Workshop 3")
-    ),
+    name: v.union(v.literal("Day 1"), v.literal("Day 2"), v.literal("Day 3")),
   }).index("name", ["name"]),
 
   attendanceRecords: defineTable({

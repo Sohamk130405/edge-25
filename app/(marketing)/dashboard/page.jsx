@@ -20,10 +20,12 @@ import Link from "next/link";
 
 const DashboardPage = () => {
   const { data: user, isLoading } = useCurrentUser();
-
+  const isAdmin = user?.ticket === "Admin";
   const [isOpen, setIsOpen] = useState(false);
-  const imageUrl =
-    "https://plus.unsplash.com/premium_vector-1736507340724-bb4a869e4e9d?q=80&w=2052&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  const ticketImg = `/tickets/${user?.prn}.png`;
+  const imageUrl = isAdmin
+    ? "https://plus.unsplash.com/premium_vector-1736507340724-bb4a869e4e9d?q=80&w=2052&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    : ticketImg;
 
   return (
     <>

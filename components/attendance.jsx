@@ -28,7 +28,7 @@ import { Input } from "@/components/ui/input";
 import { useGetAttendanceRecords } from "@/hooks/attendance/use-get-attendance-records";
 
 export default function Attendance() {
-  const [selectedSession, setSelectedSession] = useState("Workshop 1");
+  const [selectedSession, setSelectedSession] = useState("Day 1");
   const [scannerActive, setScannerActive] = useState(false);
   const [scanResult, setScanResult] = useState(null);
   const [alert, setAlert] = useState(null);
@@ -110,9 +110,9 @@ export default function Attendance() {
                 <SelectValue placeholder="Select Session" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Workshop 1">Workshop 1</SelectItem>
-                <SelectItem value="Workshop 2">Workshop 2</SelectItem>
-                <SelectItem value="Workshop 3">Workshop 3</SelectItem>
+                <SelectItem value="Day 1">Day 1</SelectItem>
+                <SelectItem value="Day 2">Day 2</SelectItem>
+                <SelectItem value="Day 3">Day 3</SelectItem>
               </SelectContent>
             </Select>
             <Button onClick={() => setScannerActive(!scannerActive)}>
