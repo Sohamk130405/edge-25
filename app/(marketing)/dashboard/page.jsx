@@ -64,9 +64,8 @@ const DashboardPage = () => {
               className="flex flex-col items-center justify-center gap-2"
             >
               <MagicBadge title="Profile" />
-              <h1 className="text-2xl font-medium">
-                Welcome {user?.name || "User"} 🎉
-              </h1>
+              <h1 className="text-lg font-medium">Welcome</h1>
+              <h1 className="text-2xl font-medium">{user?.name || "User"}</h1>
               <p className="text-gray-500 mt-2">
                 Your goodies as per our promise.
               </p>
