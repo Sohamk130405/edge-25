@@ -14,7 +14,7 @@ const SpeakerSessions = () => {
     <div className="flex flex-col items-center justify-center max-w-6xl mx-auto px-4 md:px-0">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {speakers.map((speaker, id) => (
-          <MagicCard key={id} className="p-0 md:p-0 relative">
+          <MagicCard key={id} className="p-0 md:p-0 relative w-80 sm:w-full">
             <Card className="group border-0 h-full">
               <CardContent className="p-4 lg:p-6">
                 <div className="flex items-center justify-center h-80 overflow-hidden">
