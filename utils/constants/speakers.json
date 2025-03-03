@@ -1,17 +1,22 @@
 [
     {
-        "name": "John Doe",
-        "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-        "description": "Join industry leaders as they unveil  technological advancements and discuss the future landscape of innovation."
+        "name": "Manjyoti Parasar",
+        "image": "speakers/speaker1.jpg",
+        "description": "EDGE’25 presents an exclusive 𝐒𝐩𝐞𝐚𝐤𝐞𝐫 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 with 𝐌𝐚𝐧𝐣𝐲𝐨𝐭𝐢 𝐏𝐚𝐫𝐚𝐬𝐚𝐫, a renowned 𝐋𝐢𝐟𝐞 𝐂𝐨𝐚𝐜𝐡 & 𝐓𝐫𝐚𝐧𝐬𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐄𝐱𝐩𝐞𝐫𝐭 who’s helped thousands break through limitations and create extraordinary success."
     },
     {
-        "name": "George Christ",
-        "image": "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-        "description": "Unlock the secrets of impactful communication with expert tips on storytelling, persuasion, and stage presence."
+        "name": "Sakshi Jain",
+        "image": "speakers/speaker3.jpg",
+        "description": "Abhivriddhi presents an exclusive 𝗣𝗲𝗿𝘀𝗼𝗻𝗮𝗹 𝗕𝗿𝗮𝗻𝗱𝗶𝗻𝗴 𝗪𝗼𝗿𝗸𝘀𝗵𝗼𝗽 to help you:✅ Craft a powerful personal brand✅ Elevate your online presence✅ Stand out in a competitive world"
     },
     {
-        "name": "May Watson",
-        "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGVyc29ufGVufDB8fDB8fHww",
-        "description": "Dive into AI's rapid evolution, its ethical dilemmas, and how businesses and societies can navigate the AI-driven future responsibly."
+        "name": "Abhijeet Awsarmal",
+        "image": "speakers/speaker2.jpg",
+        "description": "🔥Featuring 𝗔𝗯𝗵𝗶𝗷𝗲𝗲𝘁 𝗔𝘄𝘀𝗮𝗿𝗺𝗮𝗹, a personal branding wizard and digital strategist who has helped countless professionals transform their online presence."
+    },
+    {
+        "name": "Dnyanesh Khot",
+        "image": "speakers/speaker4.jpg",
+        "description": "To guide you Dnyanesh Khot—Senior Manager at Imarticus Learning, with experience at INTTRVU.ai, ExcelIR, and Unacademy! He’s here to break down finance in the simplest way possible."
     }
 ]
