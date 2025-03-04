@@ -1,6 +1,5 @@
-"use client";
-
 import { useState, useCallback } from "react";
+import * as XLSX from "xlsx"; // Import xlsx library
 import {
   Select,
   SelectContent,
@@ -12,10 +11,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import QrScanner from "@/components/qr-scanner";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { X } from "lucide-react";
+import { ArrowDown, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCreateAttendance } from "@/hooks/attendance/use-create-attendance";
-
 import {
   Table,
   TableBody,
@@ -44,24 +42,16 @@ export default function Attendance() {
       if (isPending) return;
       if (data) {
         setScanResult(data);
-
-        // Convert scanned PRN to integer
         const scannedPRN = parseInt(data, 10);
-
-        // Check if PRN already exists in attendanceRecords
         const isAlreadyMarked = attendanceRecords?.some(
           (record) => record.user.prn === scannedPRN
         );
 
         if (isAlreadyMarked) {
-          setAlert({
-            type: "error",
-            message: "Attendance Already Marked",
-          });
+          setAlert({ type: "error", message: "Attendance Already Marked" });
           return;
         }
 
-        // If not marked, proceed with mutation
         try {
           await markAttendance(
             { sessionId: selectedSession, prn: scannedPRN },
@@ -85,7 +75,7 @@ export default function Attendance() {
         }
       }
     },
-    [selectedSession, isPending, attendanceRecords] // Added attendanceRecords dependency
+    [selectedSession, isPending, attendanceRecords]
   );
 
   const filteredRecords = attendanceRecords?.filter(
@@ -94,6 +84,29 @@ export default function Attendance() {
       record.user.prn.toString().includes(searchQuery)
   );
 
+  // Export Attendance Records to Excel
+  const exportToExcel = () => {
+    if (!attendanceRecords || attendanceRecords.length === 0) {
+      setAlert({ type: "error", message: "No records to export" });
+      return;
+    }
+
+    const ws = XLSX.utils.json_to_sheet(
+      attendanceRecords.map((record, index) => ({
+        "Sr. No": index + 1,
+        Name: record.user.name,
+        PRN: record.user.prn,
+        "Creation Time": new Date(record._creationTime).toLocaleString(),
+      }))
+    );
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Attendance");
+
+    // Create and trigger download
+    XLSX.writeFile(wb, `Attendance_${selectedSession}.xlsx`);
+  };
+
   return (
     <div className="container mx-auto p-4">
       <Card>
@@ -101,11 +114,8 @@ export default function Attendance() {
           <CardTitle>Event Attendance System</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            <Select
-              value={selectedSession}
-              onValueChange={(value) => setSelectedSession(value)}
-            >
+          <div className="space-y-4 space-x-2">
+            <Select value={selectedSession} onValueChange={setSelectedSession}>
               <SelectTrigger>
                 <SelectValue placeholder="Select Session" />
               </SelectTrigger>
@@ -115,10 +125,19 @@ export default function Attendance() {
                 <SelectItem value="Day 3">Day 3</SelectItem>
               </SelectContent>
             </Select>
+
             <Button onClick={() => setScannerActive(!scannerActive)}>
               {scannerActive ? "Stop Scanner" : "Start Scanner"}
             </Button>
+
+            {attendanceRecords?.length > 0 && (
+              <Button variant="outline" onClick={exportToExcel}>
+                Export Excel <ArrowDown />
+              </Button>
+            )}
+
             {scanResult && <p>Last scanned: {scanResult}</p>}
+
             {alert && (
               <Alert
                 variant={alert.type === "success" ? "default" : "destructive"}
@@ -135,26 +154,29 @@ export default function Attendance() {
                 <Button
                   variant="ghost"
                   onClick={() => setAlert(null)}
-                  className="ml-4"
                   size="icon"
                 >
                   <X />
                 </Button>
               </Alert>
             )}
+
             {scannerActive && selectedSession && (
               <QrScanner onScan={handleScan} />
             )}
+
             <Input
               placeholder="Search by Name or PRN"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="mt-4"
             />
+
             {filteredRecords && (
               <Table className="mt-4">
                 <TableHeader>
                   <TableRow>
+                    <TableHead>Sr.No</TableHead>
                     <TableHead>Name</TableHead>
                     <TableHead>PRN</TableHead>
                     <TableHead>Creation Time</TableHead>
@@ -162,8 +184,9 @@ export default function Attendance() {
                 </TableHeader>
                 <TableBody>
                   {filteredRecords.length > 0 ? (
-                    filteredRecords.reverse().map((record) => (
+                    filteredRecords.reverse().map((record, index) => (
                       <TableRow key={record._id}>
+                        <TableCell>{index + 1}</TableCell>
                         <TableCell>{record.user.name}</TableCell>
                         <TableCell>{record.user.prn}</TableCell>
                         <TableCell>
