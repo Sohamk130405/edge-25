@@ -11,11 +11,12 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { useAuthActions } from "@convex-dev/auth/react";
 import { TriangleAlert } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "../ui/select";
 
 const SignUpCard = ({ setState }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const ticket = "Admin";
+  const [ticket, setTicket] = useState("EDGE");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [pending, setPending] = useState(false);
@@ -79,6 +80,15 @@ const SignUpCard = ({ setState }) => {
             placeholder="Enter PRN"
             required
           />
+          <Select onValueChange={setTicket} value={ticket}>
+            <SelectTrigger>Select Ticket</SelectTrigger>
+            <SelectContent>
+              <SelectItem value="EDGE">EDGE</SelectItem>
+              <SelectItem value="EDGE + MOCK GDPI">EDGE + MOCK GDPI</SelectItem>
+              <SelectItem value="MOCK GDPI">MOCK GDPI</SelectItem>
+              <SelectItem value="ADMIN">ADMIN</SelectItem>
+            </SelectContent>
+          </Select>
           <Input
             type="password"
             disabled={pending}
