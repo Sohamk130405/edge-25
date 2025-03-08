@@ -49,8 +49,11 @@ export const create = mutation({
 
     if (!user) throw new Error("User not found");
 
-    if (!user.ticket.includes("EDGE")) throw new Error("Unauthorized Access");
-    
+    if (sessionId !== "Day 3" && !user.ticket.includes("EDGE"))
+      throw new Error("Unauthorized Access");
+    if (sessionId === "Day 3" && !user.ticket.includes("MOCK"))
+      throw new Error("Unauthorized Access");
+
     const session = await ctx.db
       .query("sessions")
       .withIndex("name", (q) => q.eq("name", sessionId))
