@@ -102,7 +102,7 @@ const DashboardPage = () => {
                 <AccordionItem value="item-3">
                   <AccordionTrigger>🔒 Certificate</AccordionTrigger>
                   <AccordionContent>
-                    Attend complete event to unlock.
+                    Coming Soon
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
